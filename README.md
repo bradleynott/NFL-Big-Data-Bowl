@@ -28,7 +28,7 @@ I orignially planned to examine rushing player data and wide receiver data. Howe
 In the Python script functions and code appear as the analysis requires instead of placing all functions at the beginning or in a separate file to be imported. If anything is confusing just ask. If you have access to the same data and want to use my code, run it a few lines at a time like you might a Jupyter Notebook.
 
 
-Compute time (single thread) to loop through all low-level event data files, subset, and apply
+Compute time (single thread) to loop through all low-level event data files(loop at code line 426), subset, and apply
 necessary functions was ~3 min.
 
 Total Data size:
