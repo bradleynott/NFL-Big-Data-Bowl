@@ -515,7 +515,36 @@ df.insert(loc = 35, column = 'EFF', value = efficiency)
 df = df.replace(np.inf, np.nan)
 df = df.replace('no contact', np.nan)
 
-df.iloc[0:15, -12:]
+# Save updated version of plays.csv with new columns of calculated values
+df.to_csv('plays_v2.csv')
+
+
+# Recalculate Running Back rankings using new variables
+# See how the other variables stack up when sorted by adjusted success rate
+
+success_rate_v2 = df.groupby('Rusher')['RunSuccess'].apply(lambda x: round((x*1).sum()/x.shape[0], 2))
+
+rushes = df.groupby('Rusher')['RunSuccess'].count()
+successful = df.groupby('Rusher')['RunSuccess'].apply(lambda x: round((x*1).sum()))
+avg_eff = round(df.groupby('Rusher')['EFF'].mean(), 2)
+avg_max_spd = round(df.groupby('Rusher')['MaxSpeed'].mean(), 2)
+avg_ct_spd = round(df.groupby('Rusher')['ContactSpeed'].mean(), 2)
+avg_yds_aft_ct = round(df.groupby('Rusher')['YardsAfterContact'].mean(), 2)
+
+rb_success_rate_v2 = pd.DataFrame({'Rushes': rushes,
+                                   'Successful': successful,
+                                   'AvgEFF': avg_eff, 
+                                   'AvgMaxSpeed': avg_max_spd,
+                                   'AvgCtSpeed': avg_ct_spd,
+                                   'AvgYardsAfterContact': avg_yds_aft_ct,
+                                   'SuccessRate':success_rate})
+
+# sorted by confidence in success rate
+
+rb_success_rate_v2['Conf_Adj_Rank'] = rb_success_rate.apply(lambda x: round(ci_lower_bounds(x['Successful'], x['Rushes'], 0.95), 4), axis = 1)
+
+rb_success_rate_v2.sort_values('Conf_Adj_Rank', inplace = True, ascending = False)
+rb_success_rate_v2.to_csv('success_rate_adj_v2.csv')
 
 
 import seaborn as sns
