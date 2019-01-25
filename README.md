@@ -11,9 +11,14 @@ There was a lot of low-level event data. Instead of merging all of that data wit
 I chose to plan my work using the higher level tables. I then worked my way throug each lowwer level event data
 file according to that plan.
 
-### Note:
+### Note 1:
 
 I orignially planned to examine rushing player data and wide receiver data. However times constraints led me to structure my research question to focus on rushing plays only. You will notice in my Python script that I initially performed subsets to retain pass plays and rushing plays. However, prior to iterating throug all of the tracking data I created a dictionary of games (keys) and play numbers (values) for ONLY non-QB non-fumble rushing plays. You could certainly extend the ideas that I considered to other player positions, but I limited the scope of my analysis to rushing plays only in order to comply with the deadline.
+
+### Note 2:
+
+In the Python script functions and code appear as the analysis requires instead of placing all functions at the beginning or in a separate file to be imported. If anything is confusing just ask. If you have access to the same data and want to use my code, run it a few lines at a time like you might a Jupyter Notebook.
+
 
 Compute time (single thread) to loop through all low-level event data files, subset, and apply
 necessary functions was ~3 min.
