@@ -182,14 +182,14 @@ import seaborn as sns
 x = df['ContactSpeed']
 y = df['YardsAfterContact']
 
-def r2(x,y):
+def corr(x,y):
     nas = np.logical_or(np.isnan(x), np.isnan(y))
     return pearsonr(x[~nas], y[~nas])[0]
 sns.set_context("paper")
 
 warnings.filterwarnings("ignore")
 
-fig1 = sns.jointplot(x, y, kind="reg", stat_func=r2)
+fig1 = sns.jointplot(x, y, kind="reg", stat_func=corr)
 fig1.set_axis_labels(xlabel='Contact Speed (yds/s)', ylabel='Yards After Contact')
 plt.show()
 plt.clf()
