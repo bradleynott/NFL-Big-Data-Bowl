@@ -15,7 +15,7 @@ file according to that plan.
 
 ### Update 27JAN19
 
-Recreated report PDF in R markdown (version 3) to correct low resolution plots. Markdown file incorporates Python and R code. CSV data loaded in markdown file were derived from the raw data using master.py
+Recreated report PDF (nfl_big_data_bowl_Brad_Nott_v3.pdf) using R markdown to correct the low resolution plots. Markdown file incorporates Python and R code. CSV data loaded in markdown file were derived from the raw data using master.py
 
 ### Update 25JAN19
 
