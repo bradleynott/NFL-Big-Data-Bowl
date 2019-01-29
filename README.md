@@ -10,7 +10,7 @@ Per the contest rules I am not allowed to share the data provided for the projec
 comments throughout to explain how I went about the arrangment of data and analysis.
 
 There was a lot of low-level event data. Instead of merging all of that data with the higher level tables
-I chose to plan my work using the higher level tables. I then worked my way throug each lowwer level event data
+I chose to plan my work using the higher level tables. I then worked my way through each lower level event data
 file according to that plan.
 
 ### Update 27JAN19
