@@ -13,6 +13,10 @@ There was a lot of low-level event data. Instead of merging all of that data wit
 I chose to plan my work using the higher level tables. I then worked my way through each lower level event data
 file according to that plan.
 
+### Update 24JUN19
+
+Added my explanation for how I interpreted the 'first_contact' tag, and why I made the assumption that it is a reference to the ball carrier. Curiously enough with this data set the play description field/column in the plays.csv file indicated who the ball carrier on each play was but it used an abbreviation. The sensor data identifies players with their full names. With a little cross referencing of the player profile data and some disambiguation work I was able to identify and extract the data for ball carriers on each rushing play.
+
 ### Update 27JAN19
 
 Recreated report PDF (nfl_big_data_bowl_Brad_Nott_v3.pdf) using R markdown to correct the low resolution plots. Markdown file incorporates Python and R code. CSV data loaded in markdown file were derived from the raw data using master.py
